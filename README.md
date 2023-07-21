@@ -1,5 +1,5 @@
 # ds-projects
-Python for Data Science work from the Python for Data Science course on Udemy. 
+Python for Data Science work from the Python for Data Science course on Udemy by Jose Partida
 Course content is split into folders for:
 
 1. Linear Regression

@@ -71,3 +71,27 @@ Avg. Area Number of Rooms     122368.678027  ---- for every 1 unit increase in N
 Avg. Area Number of Bedrooms    2233.801864  ---- for every 1 unit increase in Number of Bedrooms, price increases by $2,233
 Area Population                   15.150420  ---- for every 1 unit increase in Population, price increases by $15.15
 '''
+
+# PREDICTIONS
+predictions = lm.predict(X_test)
+
+predictions
+y_test
+
+# check a scatter plot comparing the predictions
+plt.scatter(y_test,predictions)
+plt.show()
+
+# plotting residuals will show us the diff between the test and predictions
+sns.distplot((y_test-predictions))
+plt.show()
+
+'''
+if the dist plot is normally distributed then we can assume that this was the correct model for the dataset
+'''
+
+# regression evaluation metrics MAE (Mean Absolute Error), MSE (Mean Squared Error), RMSE (Root Mean Squared Error)
+from sklearn import metrics
+metrics.mean_absolute_error(y_test,predictions)
+metrics.mean_squared_error(y_test,predictions)
+np.sqrt(metrics.mean_squared_error(y_test,predictions))

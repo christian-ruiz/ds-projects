@@ -91,3 +91,21 @@ plt.show()
 print(metrics.mean_absolute_error(y_test, predictions),'\n',
       metrics.mean_squared_error(y_test, predictions), '\n',
       np.sqrt(metrics.mean_squared_error(y_test,predictions)))
+
+# plotting the residuals
+sns.distplot(y_test-predictions)
+plt.show()
+
+# create a df with the coeff results
+pd.DataFrame(lm.coef_, X_train.columns, columns=['Coeff'])
+
+'''
+                          Coeff
+Avg. Session Length   25.981550 --- for every unit increase in avg. session length, yearly amount spent increases by $25.98
+Time on App           38.590159 --- for every unit increase in time on app, yearly amount spent increases by $38.59
+Time on Website        0.190405 --- for every unit increase in time on website, yearly amount spent increases by $0.19
+Length of Membership  61.279097 --- for every unit increase in length of membership, yearly amount spent increases by $61.28
+
+Conclusion - the company should spend more time on their mobile app
+'''
+

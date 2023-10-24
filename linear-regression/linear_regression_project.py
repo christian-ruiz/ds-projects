@@ -109,3 +109,8 @@ Length of Membership  61.279097 --- for every unit increase in length of members
 Conclusion - the company should spend more time on their mobile app
 '''
 
+import matplotlib.pyplot as plt
+data = [1.1, 3.33333, 0.25, 2.8, 3.99, 0.0001, 1.41, 1.9, 2.98, 1.7]
+plt.hist(data, bins=4, edgecolor="k")
+plt.show()
+
